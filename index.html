@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/vista/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vista/css/estilos.css">
+    <title>Grooming Pet</title>
+</head>
+
+<body>
+
+    
+
+
+    <!------------------Area De Trabajo------------------------>
+
+
+    <div class="contenido" id="areaDeTrabajo">
+
+       
+    </div>
+
+
+    <!---------------------------PANTALLAS------------------------------->
+    <template id="inicio">
+        <div class="contenido">
+            <h2>BIENVENIDOS A GOOMING PET</h2>
+
+            <div class="inicio">
+                <button type="button" id="inicioRegistro" onclick=crearUsuario()>Registro</button>
+                <h3>O</h3>
+                <button id="inicioSesion" onclick=ingresarUsuario()>Iniciar Sesion</button>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="registro">
+        <div class="contenido">
+            <div class="encabezado">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+
+                </div>
+                <div class="registro">
+                    <h1>Registro</h1>
+
+                </div>
+
+            </div>
+            <div class="nombre">
+                <h5>Nombre Completo</h5>
+                <input type="text" required>
+            </div>
+            <div class="usuario">
+                <h5>Correo electronico</h5>
+                <input type="text" required>
+            </div>
+            <div class="celular">
+                <h5>celular</h5>
+                <input type="text" required>
+            </div>
+            <div class="direccion">
+                <h5>Direccion</h5>
+                <input type="text" required>
+            </div>
+            <div class="contrasenia">
+                <h5>Contraseña</h5>
+                <input type="password" required>
+            </div>
+            
+            <button id="btn" onclick=mostrarServicios()>Ingresar</button>
+
+        </div>
+    </template>
+
+    <template id="iniciarSesion">
+        <div class="contenido">
+            <div class="encabezado">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+
+                </div>
+                <div class="titulo">
+                    <h1>Iniciar Sesion</h1>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="usuario">
+                <h5>Correo electronico</h5>
+                <input type="text" required>
+            </div>
+            <div class="contrasenia">
+                <h5>Contraseña</h5>
+                <input type="password" required>
+            </div>
+            <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
+            <button id="btn" onclick=mostrarServicios()>Ingresar</button>
+
+        </div>
+    </template>
+
+    <template id="servicio">
+        <div class="contenido">
+            <div class="encabezado">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+                </div>
+                <div class="row">
+                    <h1>¿ ELIGE EL SERVICIO QUE DESEAS PARA TU MASCOTA ?</h1>
+
+                </div>
+            </div>
+
+            <div class="boton1">
+                <button id="btn1" onclick=mostrarDescripcion1()>Baño y Peluqueria</button>
+                <input type="radio" name="servicio">
+            </div>
+            <div class="boton4">
+                <button id="btn4" onclick=mostrarDescripcion4()>Baño Medicaado</button>
+                <input type="radio" name="servicio">
+            </div>
+            <div class="boton2">
+                <button id="btn2" onclick=mostrarDescripcion2()>Corte de Uñas</button>
+                <input type="radio" name="servicio">
+            </div>
+            <div class="boton3">
+                <button id="btn3" onclick=mostrarDescripcion3()>Limpieza de Dientes y Oidos</button>
+                <input type="radio" name="servicio">
+
+            </div>
+            <button id="btn" onclick=mostrarAngendarCita()>Agendar cita</button>
+
+        </div>
+    </template>
+
+    <template id="agendarCita">
+        <div class="contenido">
+            <div class="agendarCita">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+
+                </div>
+                <div class="row">
+                    <h1>Agenda tu Cita</h1>
+
+                </div>
+            </div>
+
+            <div class="fecha1">
+                <h4>Citas Disponibles</h4>
+                <table>
+                    <tr>
+                        <th>24 de feb</th>
+                        <th>26 de feb</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>8:00 am</a></td>
+                        <td><input type="checkbox"> <a>8:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>9:00 am</a></td>
+                        <td><input type="checkbox"> <a>9:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>10:00 am</a></td>
+                        <td><input type="checkbox"> <a>10:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>11:00 am</a></td>
+                        <td><input type="checkbox"> <a>11:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>12:00 am</a></td>
+                        <td><input type="checkbox"> <a>12:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>1:00 am</a></td>
+                        <td><input type="checkbox"> <a>1:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>3:00 am</a></td>
+                        <td><input type="checkbox"> <a>3:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>4:00 am</a></td>
+                        <td><input type="checkbox"> <a>4:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>5:00 am</a></td>
+                        <td><input type="checkbox"> <a>5:00 am</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"> <a>6:00 am</a></td>
+                        <td><input type="checkbox"> <a>6:00 am</a></td>
+                    </tr>
+
+                </table>
+
+                <button id="btn">Agendar cita</button>
+            </div>
+
+    </template>
+
+    <template id="banioYPeluqueria">
+        <div class="contenido">
+            <div class="descripcion">
+                <div class="atras">
+                    <button id="back" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+                </div>
+                <div class="subtitulo">
+                    <h1>Baño y Peluqueria</h1>
+                </div>
+            </div>
+            <div class="texto">
+                <p>
+                    Consta de baño con agua tibia y shampoo especial antipulgas, masaje de relajacion para tu peludito,
+                </p>
+                <con ello un corte (al estilo que desees), se le aplica locion y pañoleta de obsequio></con><br>
+                Tiene un costo de $ XXXX
+            </div>
+
+        </div>
+    </template>
+
+    <template id="banioMedicado">
+        <div class="contenido">
+            <div class="descripcion">
+                <div class="atras">
+                    <button id="back" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+                </div>
+                <div class="subtitulo">
+                    <h1>Baño Medicado</h1>
+                </div>
+            </div>
+            <div class="texto">
+                <p>
+                <p>¿Qué es un baño medicado para tu peludo 🐶🐱 y cuando se aplica?</p>
+
+                ▪️Son baños realizados con productos especificos 🧽🧴
+                y especiales recetados por un médico veterinario según la condición médica de tu peludito.
+                <br>
+                ▪️Para realizarlo se pueden presentar motivos variados
+                como problemas dermatólogicos hasta una reciente cirugía
+                en donde el animal tiene una herida en proceso de curación.
+                <br>
+                ▪️Los casos más comunes en los cuales los animales son recetados con este tipo de baño son:<br>
+                🔗Irritaciones de la piel<br>
+                🔗Sequedad<br>
+                🔗Picazón<br>
+                🔗Infecciones bacterianas<br>
+                🔗Exceso de oleosidad<br>
+                🔗Caspa<br>
+                🔗Alergias cutáneas<br>
+                🧮También se realiza para prevenir el desarrollo de las pulgas y garrapatas o tratarlas.<br>
+
+                </p>
+                <p>Tiene un costo de $XXXX</p>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="corteDeUnias">
+        <div class="contenido">
+            <div class="descripcion">
+                <div class="atras">
+                    <button id="back" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+                </div>
+                <div class="subtitulo">
+                    <h1>Corte de Uñas</h1>
+                </div>
+            </div>
+            <div class="texto">
+                <p>
+                    Se cortan las uñas de tu peludito, para evitar rasguños molestos y dolorosos contigo y con tus
+                    muebles
+                </p>
+                <p>Se utilizara un cortauñas especial para tu peludito.</p>
+
+                Tiene un costo de $ XXXX
+            </div>
+
+        </div>
+    </template>
+
+    <template id="limpiezaGeneral">
+        <div class="contenido">
+            <div class="descripcion">
+                <div class="atras">
+                    <button id="back" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+                </div>
+                <div class="subtitulo">
+                    <h1>Limpieza General</h1>
+                </div>
+            </div>
+            <div class="texto">
+                <p>
+                    ▪️Se realiza limpieza de oidos con orejitas clean, que ayuda a tener una excelente limpieza y evitar
+                    la otitis de tu peludito.
+                    <br>
+                    ▪️Se realiza limpieza de dientes con xxxx para una excelente hiegiene
+                    bucal de tu
+                    peludo.
+                    <br>
+                    ▪️Entre otros...
+                    <br>
+                </p>
+                <p>Tiene un costo de $XXXX</p>
+            </div>
+
+        </div>
+    </template>
+
+    <!--------------------------------------------------------------------------------------->
+
+    <script src="/vista/js/jquery_3_7_1.js"></script>
+    <script src="/vista/js/vista.js"></script>
+    <script src="/vista/js/controlador.js"></script>
+
+</body>
+
+<!--Pantallas-->
+
+
+
+</html>
