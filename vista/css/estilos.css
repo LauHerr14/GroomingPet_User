@@ -1,497 +1,451 @@
-
-body{
-    margin: 0;
-    padding: 0;
-    font-family: montserrat;
-    height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: montserrat;
+  height: 100vh;
 }
 
-.contenido{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 800px;
-    border-radius: 20px;
+.contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 800px;
+  border-radius: 20px;
 
-    position: relative;
-    isolation: isolate;
-
+  position: relative;
+  isolation: isolate;
 }
 
 .contenido::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: pink;
-    opacity: .1;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: pink;
+  opacity: 0.1;
 
-    background-image: url(/imagenes/logo.png);
-    background-repeat: round;
-    background-size: cover;
+  background-image: url(/imagenes/logo.png);
+  background-repeat: round;
+  background-size: cover;
 }
 
-.contenido img{
-    margin: 10px;
-    width: 50px;
-    cursor: pointer;
+.contenido img {
+  margin: 10px;
+  width: 50px;
+  cursor: pointer;
 }
 
-.contenido h2{
-    padding: 200px 100px 65px 108px;
-    font-size: 1.5rem;
+.contenido h2 {
+  padding: 200px 100px 65px 108px;
+  font-size: 1.5rem;
 }
 
-.inicio{
-    padding: 80px;
+.inicio {
+  padding: 80px;
 }
 
-#inicioRegistro{
-    background: #0F1035;
-    color: white;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.5rem;
+#inicioRegistro {
+  background: #0f1035;
+  color: white;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-#inicioRegistro:hover{
-    background-color: #0b0b20;
+#inicioRegistro:hover {
+  background-color: #0b0b20;
 }
 
-.inicio h3{
-    margin: 10px;
-    margin-left: 115px;
+.inicio h3 {
+  margin: 10px;
+  margin-left: 115px;
 }
 
-#inicioSesion{
-    background: #365486;
-    color: white;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.5rem;
+#inicioSesion {
+  background: #365486;
+  color: white;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-#inicioSesion:hover{
-    background-color: #133061;
+#inicioSesion:hover {
+  background-color: #133061;
 }
 
-.encabezado{
-    display: flex;
-    margin: 0 0 50px 0;
+.encabezado {
+  display: flex;
+  margin: 0 0 50px 0;
 }
 
-.retroceder{
-    flex: row;
-    display: flex;
-    padding: 10px;
+.retroceder {
+  flex: row;
+  display: flex;
+  padding: 10px;
 }
 
-#retroceso{
-    background: transparent;
-    border: transparent;
+#retroceso {
+  background: transparent;
+  border: transparent;
 }
 
-.registro{
-    color: rgb(249, 249, 252);
-    background-color: #0F1035;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    margin: 20px 0 10px 20px;
+.registro {
+  color: rgb(249, 249, 252);
+  background-color: #0f1035;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  margin: 20px 0 10px 20px;
 }
 
-.registro h1{
-    margin: 10px 0 0 80px;
-    font-size: 1.7rem;
+.registro h1 {
+  margin: 10px 0 0 80px;
+  font-size: 1.7rem;
 }
 
-.titulo{
-    color: rgb(249, 249, 252);
-    background-color: #365486;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    margin: 20px 0 10px 20px;
+.titulo {
+  color: rgb(249, 249, 252);
+  background-color: #365486;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  margin: 20px 0 10px 20px;
 }
 
-.titulo h1{
-    margin: 10px 0 0 50px;
-    font-size: 1.7rem;
+.titulo h1 {
+  margin: 10px 0 0 50px;
+  font-size: 1.7rem;
 }
 
-.nombre{
-    justify-content: center;
+.nombre {
+  justify-content: center;
 }
 
-.nombre h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
+.nombre h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.nombre input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    padding: 10px 0 0 15px;
-    justify-content: left;
+.nombre input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: left;
 }
 
-.usuario{
-    justify-content: center;
+.usuario {
+  justify-content: center;
 }
 
-.usuario h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
+.usuario h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.usuario input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    padding: 10px 0 0 15px;
-    justify-content: center;
+.usuario input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: center;
 }
 
-.celular{
-    justify-content: center;
+.celular {
+  justify-content: center;
 }
 
-.celular h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
+.celular h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.celular input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    padding: 10px 0 0 15px;
-    justify-content: center;
+.celular input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: center;
 }
 
-.direccion{
-    justify-content: center;
+.direccion {
+  justify-content: center;
 }
 
-.direccion h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
+.direccion h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.direccion input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    padding: 10px 0 0 15px;
-    justify-content: center;
+.direccion input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: center;
 }
 
-.contrasenia{
-    justify-content: center;
+.contrasenia {
+  justify-content: center;
 }
 
-.contrasenia h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
-
-}
-
-.contrasenia input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    ;
-    padding: 10px 0 0 15px;
-    justify-content: left;
+.contrasenia h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.nombreMascota{
-    justify-content: center;
+.contrasenia input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: left;
 }
 
-.nombreMascota h5{
-    margin: 20px 0 10px 20px;
-    font-size: 1.5rem;
+.nombreMascota {
+  justify-content: center;
 }
 
-.nombreMascota input{
-    background: #7FC7D9;
-    color: black;
-    border-radius: 20px;
-    width: 400px;
-    margin-left: 10px;
-    padding: 10px 0 0 15px;
-    justify-content: center;
+.nombreMascota h5 {
+  margin: 20px 0 10px 20px;
+  font-size: 1.5rem;
 }
 
-.recordar{
-    margin: 30px;
-    font-size: 1.5rem;
-    cursor: pointer;
-
+.nombreMascota input {
+  background: #7fc7d9;
+  color: black;
+  border-radius: 20px;
+  width: 400px;
+  margin-left: 10px;
+  padding: 10px 0 0 15px;
+  justify-content: center;
 }
 
-.elegirMascota{
-    margin: 30px;
-    font-size: 1.5rem;
-    margin-bottom: 0;
+.recordar {
+  margin: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.mascota{
-    margin-left: 130px;
+.mascota {
+  margin-left: 130px;
 }
 
-.mascota input[type=radio]{
-    background: #7FC7D9;
-    border-style: groove;
-    padding: 10px 0 0 10px;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
+#btn {
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background: #dcf2f1;
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+  margin-left: 100px;
+  margin-bottom: 50px;
 }
 
-#btn{
-    width: 200px;
-    height: 50px;
-    border-radius: 30px;
-    background: #DCF2F1;
-    font-size: 1.5rem;
-    color: black;
-    cursor: pointer;
-    margin-left: 100px;
-    margin-bottom: 50px;
-    
+#btn:hover {
+  background-color: #85ddd9;
 }
 
-#btn:hover{
-    background-color: #85ddd9;
+.row {
+  margin: 10px 0 0 50px;
+  font-size: 1rem;
 }
 
 
-.row{
-    margin: 10px 0 0 50px;
-    font-size: 1rem;
+#btn1 {
+  width: 380px;
+  height: 50px;
+  border-radius: 30px;
+  background: #365486;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 30px;
+  margin: 20px;
 }
-
-.boton1 input[type=radio]{
-    background: #7FC7D9;
-    border-style: groove;
-    padding: 10px 0 0 10px;
-    width: 30px;
-    height: 50px;
-    cursor: pointer;
 
+#btn1:hover {
+  background-color: #1f3253;
 }
 
-
-#btn1{
-    width: 280px;
-    height: 50px;
-    border-radius: 30px;
-    background: #365486;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    margin-left: 30px;
-    margin: 20px;
-}
 
-#btn1:hover{
-    background-color: #1f3253;
+#btn4 {
+  width: 380px;
+  height: 50px;
+  border-radius: 30px;
+  background: #365486;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 30px;
+  margin: 20px;
 }
 
-.boton4 input[type=radio]{
-    background: #7FC7D9;
-    border-style: groove;
-    padding: 10px 0 0 10px;
-    width: 30px;
-    height: 50px;
-    cursor: pointer;
-
+#btn4:hover {
+  background-color: #1f3253;
 }
-
 
-#btn4{
-    width: 280px;
-    height: 50px;
-    border-radius: 30px;
-    background: #365486;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    margin-left: 30px;
-    margin: 20px;
+#btn2 {
+  width: 380px;
+  height: 50px;
+  border-radius: 30px;
+  background: #365486;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 30px;
+  margin: 20px;
 }
 
-#btn4:hover{
-    background-color: #1f3253;
+#btn2:hover {
+  background-color: #1f3253;
 }
 
-.boton2 input[type=radio]{
-    background: #7FC7D9;
-    padding: 10px 0 0 10px; 
-    width: 30px;
-    height: 50px;
-    cursor: pointer;
 
+#btn3 {
+  width: 380px;
+  height: 50px;
+  border-radius: 30px;
+  background: #365486;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 30px;
+  margin: 20px;
 }
 
-#btn2{
-    width: 280px;
-    height: 50px;
-    border-radius: 30px;
-    background: #365486;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    margin-left: 30px;
-    margin: 20px;
+#btn3:hover {
+  background-color: #1f3253;
 }
 
-#btn2:hover{
-    background-color: #1f3253;
+#btn {
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background: #dcf2f1;
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 1rem;
 }
 
-.boton3 input[type=radio]{
-    background: #7FC7D9;
-    border-style: groove;
-    padding: 10px 0 0 10px;
-    width: 30px;
-    height: 50px;
-    cursor: pointer;
-
+.agendarCita {
+  display: flex;
 }
 
-#btn3{
-    width: 280px;
-    height: 50px;
-    border-radius: 30px;
-    background: #365486;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    margin-left: 30px;
-    margin: 20px;
+.fecha1 input {
+  background: #7fc7d9;
+  padding: 10px 0 0 10px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
 }
 
-#btn3:hover{
-    background-color: #1f3253;
+.fecha1 {
+  padding: 20px;
+  letter-spacing: 5px;
 }
 
-#btn{
-    width: 200px;
-    height: 50px;
-    border-radius: 30px;
-    background: #DCF2F1;
-    font-size: 1.5rem;
-    color: black;
-    cursor: pointer;
-    margin-left: 100px;
-    margin-top: 50px;
-    font-size: 1rem;
-    
+.descripcion {
+  display: flex;
+  margin: 10px;
 }
 
-.agendarCita{
-    display: flex;
+.atras {
+  flex: row;
+  display: flex;
+  padding: 10px;
 }
 
-.fecha1 input{
-    background: #7FC7D9;
-    padding: 10px 0 0 10px;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
+#back {
+  background: transparent;
+  border: transparent;
 }
 
-.fecha1{
-    padding: 20px;
-    letter-spacing: 5px;
+.subtitulo {
+  margin-top: 20px;
+  background: #365486;
+  color: white;
+  width: 270%;
+  height: 30%;
+  border-radius: 50px;
 }
 
-.descripcion{
-    display: flex;
-    margin: 10px;
+.subtitulo h1 {
+  font-size: 1.5rem;
+  margin: 5% 0 5% 15%;
+  justify-content: center;
 }
 
-.atras{
-    flex: row;
-    display: flex;
-    padding: 10px;
+.cuadro{
+  margin-top: 100px;
+  padding-top: 10px;
 }
 
-#back{
-    background: transparent;
-    border: transparent;
-}
+.cuadro2 {
+  justify-content: center;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px;
+  padding-top: 120px;
+  margin: 20px 30px 30px 20px;
+  height: 380px;
+  width: 350px;
+  border-radius: 50px;
 
-.subtitulo{
-    margin-top: 20px;
-    background: #365486;
-    color: white;
-    width: 270%;
-    height: 30%;
-    border-radius: 50px;
+  position: relative;
+  isolation: isolate;
 }
 
-.subtitulo h1{
-    font-size: 1.5rem;
-    margin: 5% 0 5% 15%;
-    justify-content: center;
-}
+.cuadro2::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: #c5e9f1;
+  opacity: .5;
+  border-radius: 50px;
+  
 
-.texto{
-    font-size: 1.5rem;
-    margin: 30px 0 10px 10px;
-    padding: 20px;
+  background-image: url();
+  background-repeat: round;
+  background-size: cover;
 }
 
-.mensaje h2{
-    margin-bottom: .5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
-}
+#salirApp {
+  width: 280px;
+  height: 50px;
+  border-radius: 30px;
+  background: #ff5252;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 50px;
+  margin: 50px;
 
-#bton_inicio{
-    background: #7e81db;
-    color: white;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.5rem;
 }
 
-#bton_salir{
-    background: #3a3d85;
-    color: white;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.5rem;
+#salirApp:hover {
+  background-color: #ffbdbd;
 }
 
-.dos {
-    margin: 10px;
-    margin-left: 115px;
-}
+

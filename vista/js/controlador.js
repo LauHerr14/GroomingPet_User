@@ -1,4 +1,5 @@
  vista = new Vista()
+ let usuario = new Usuario
 
 
 /*---------Inicio----------- */
@@ -17,6 +18,31 @@ window.addEventListener('load', function() {
       vista.mostrarPlantilla('iniciarSesion', 'areaDeTrabajo')
     }
   
+
+    function ingresar() {
+      let data = vista.getForm('formlogin');
+      if (data.ok) {
+        usuario.login(data, function(data) {
+          if (data.success) {
+            if (data.cant == 0) {
+              vista.mostrarMensaje(false, 'Uusario o contrseña incorrectos');
+              return;
+            }
+            if (data.user.tipo == 'cliente') {
+              const regUsuario = {
+                id_cliente: data.user.id,
+                nombre_cliente: data.user.nombre_cliente
+              };
+              
+              usuario.setData(regUsuario);
+              mostrarServicios();
+            } else {
+              vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
+            }
+          }
+        });
+      }
+    }
     
   
     function mostrarServicios(){
@@ -59,4 +85,14 @@ window.addEventListener('load', function() {
     function retrocederPantalla1(){
       vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
+    }
+
+    function mostrarFinal(){
+      vista.limpiarArea('areaDeTrabajo')
+      vista.mostrarPlantilla('final', 'areaDeTrabajo')
+    }
+
+    function salirAplicacion(){
+      vista.limpiarArea('areaDeTrabajo')
+      vista.mostrarPlantilla('inicio', 'areaDeTrabajo')
     }
