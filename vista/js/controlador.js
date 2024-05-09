@@ -12,6 +12,11 @@ window.addEventListener('load', function() {
       vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('registro', 'areaDeTrabajo')
     }
+
+    function mostrarMascotas(){
+      vista.limpiarArea('areaDeTrabajo')
+      vista.mostrarPlantilla('mascota', 'areaDeTrabajo')
+    }
   
     function ingresarUsuario(){
       vista.limpiarArea('areaDeTrabajo')
@@ -75,8 +80,11 @@ window.addEventListener('load', function() {
       vista.mostrarPlantilla('agendarCita', 'areaDeTrabajo')
     }
   
-  
-  
+    function retrocederPantalla2(){
+      vista.limpiarArea('areaDeTrabajo')
+      vista.mostrarPlantilla('registro', 'areaDeTrabajo')
+    }
+
     function retrocederPantalla(){
       vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('inicio', 'areaDeTrabajo')

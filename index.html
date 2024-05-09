@@ -11,7 +11,7 @@
 
 <body>
 
-
+    
 
     <!------------------Area De Trabajo------------------------>
 
@@ -50,39 +50,64 @@
                 </div>
 
             </div>
-            <div class="nombre">
-                <h5>Nombre Completo</h5>
-                <form>
-                    <input type="text" required>
-                </form>
-            </div>
-            <div class="usuario">
-                <h5>Correo electronico</h5>
-                <form>
-                    <input type="text" required>
-                </form>
-            </div>
-            <div class="celular">
-                <h5>Celular</h5>
-                <form>
-                    <input type="text" required>
-                </form>
-            </div>
-            <div class="direccion">
-                <h5>Direccion</h5>
-                <form>
-                    <input type="text" required>
-                </form>
-            </div>
-            <div class="contrasenia">
-                <h5>Contraseña</h5>
-                <form>
-                    <input type="password" required>
-                </form>
-            </div>
+            <form>
 
-            <button id="btn" onclick=mostrarServicios()>Siguiente</button>
+                <div class="nombre">
+                    <h5>Nombre Completo</h5>
+                        <input type="text" required>
+                </div>
+                <div class="usuario">
+                    <h5>Correo electronico</h5>
+                        <input type="text" required>
+                </div>
+                <div class="celular">
+                    <h5>Celular</h5>
+                        <input type="text" required>
+                </div>
+                <div class="direccion">
+                    <h5>Direccion</h5>
+                        <input type="text" required>
+                </div>
+                <div class="contrasenia">
+                    <h5>Contraseña</h5>
+                        <input type="password" required>
+                </div>
+            </form>
 
+            <button id="btn" onclick=mostrarMascotas()>Siguiente</button>
+
+        </div>
+    </template>
+
+    <template id="mascota">
+        <div class="contenido">
+            <div class="encabezado">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla2()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+    
+                </div>
+                <div class="registro">
+                    <h1>Mascota</h1>
+    
+                </div>
+    
+            </div>
+            <form>
+    
+                <div class="nombre">
+                    <h5>Nombre Mascota</h5>
+                        <input type="text" required>
+                </div>
+                <div class="usuario">
+                    <h5>Tipo Mascota</h5>
+                        <input type="text" required>
+                </div>
+                
+            </form>
+    
+            <button id="mascota" onclick=mostrarServicios()>Ingresar</button>
+    
         </div>
     </template>
 
@@ -136,7 +161,7 @@
                 <button id="btn1" onclick=mostrarDescripcion1()>Baño y Peluqueria</button>
             </div>
             <div class="boton4">
-                <button id="btn4" onclick=mostrarDescripcion4()>Baño Medicaado</button>
+                <button id="btn4" onclick=mostrarDescripcion4()>Baño Medicado</button>
             </div>
             <div class="boton2">
                 <button id="btn2" onclick=mostrarDescripcion2()>Corte de Uñas</button>

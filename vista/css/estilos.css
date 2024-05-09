@@ -243,6 +243,10 @@ body {
   cursor: pointer;
 }
 
+.recordar A{
+  color: black;
+}
+
 .mascota {
   margin-left: 130px;
 }
@@ -446,6 +450,23 @@ body {
 
 #salirApp:hover {
   background-color: #ffbdbd;
+}
+
+#mascota {
+  margin-top: 250px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background: #dcf2f1;
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+#mascota:hover {
+  background-color: #85ddd9;
 }
 
 
