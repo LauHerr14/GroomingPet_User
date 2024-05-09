@@ -12,9 +12,9 @@ class Usuario extends Connect{
     setData(data){
         this.id = data.id;
         this.nombre_cliente = data.nombre_cliente;
-        this.direccion = data.direccion;
-        this.telefono = data.telefono;
         this.email = data.email;
+        this.telefono = data.telefono;
+        this.direccion = data.direccion;
         this.password = data.password;
     }
 
@@ -22,15 +22,15 @@ class Usuario extends Connect{
         return {
             id: this.id,
             nombre_cliente: this.nombre_cliente,
-            direccion: this.direccion,
+            email: this.email,
             telefono: this.telefono,
-            email: this.email
+            direccion: this.direccion
         };
     }
 
     //Metodo para verificar login
     login(dataReq, loginCallback){
-        const endpoint = 'clientes';
+        const endpoint = 'clientes/id';
         const method = 'POST';
         this.connect(dataReq, endpoint, method, loginCallback);
     }

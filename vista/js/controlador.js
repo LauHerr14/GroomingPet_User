@@ -1,5 +1,5 @@
  vista = new Vista()
- let usuario = new Usuario
+ usuario = new Usuario();
 
 
 /*---------Inicio----------- */
@@ -20,12 +20,11 @@ window.addEventListener('load', function() {
   
     function ingresarUsuario(){
       vista.limpiarArea('areaDeTrabajo')
-      vista.mostrarPlantilla('iniciarSesion', 'areaDeTrabajo')
+      vista.mostrarPlantilla('login', 'areaDeTrabajo')
     }
-  
 
     function ingresar() {
-      let data = vista.getForm('formlogin');
+      let data = vista.getForm('formulario');
       if (data.ok) {
         usuario.login(data, function(data) {
           if (data.success) {
@@ -33,10 +32,10 @@ window.addEventListener('load', function() {
               vista.mostrarMensaje(false, 'Uusario o contrseña incorrectos');
               return;
             }
-            if (data.user.tipo == 'cliente') {
+            if (data.usuario.tipo == 'clientes') {
               const regUsuario = {
-                id_cliente: data.user.id,
-                nombre_cliente: data.user.nombre_cliente
+                id_cliente: data.usuario.id,
+                nombre_cliente: data.usuario.nombre_cliente
               };
               
               usuario.setData(regUsuario);
@@ -49,6 +48,10 @@ window.addEventListener('load', function() {
       }
     }
     
+    function ingresar(){
+      vista.limpiarArea('areaDeTrabajo')
+      vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
+    }
   
     function mostrarServicios(){
       vista.limpiarArea('areaDeTrabajo')

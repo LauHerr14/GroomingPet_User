@@ -1,8 +1,8 @@
 class Vista {
   constructor() {}
 
-  mostrarModal(titulo, msj) {
-    document.getElementById("modal-titulo").innerHTML = titulo;
+  mostrarModal(data, msj) {
+    document.getElementById("modal-data").innerHTML = data;
     document.getElementById("modal-cuerpo").innerHTML = msj;
     $("#modal-1").modal(); // muestra la ventana modal
   }
@@ -47,13 +47,13 @@ class Vista {
     return data;
   }
 
-
   /**
    * Despliega un mensaje de error por tres segundos
    * @param {bool} ok: bandera que indica si el mensaje es de error o de éxito
    * @param {str} mensaje: texto del mensaje a desplegar
    */
   mostrarMensaje(ok, mensaje) {
+   
     // Crear el elemento del mensaje
     let mensajeDiv = document.createElement("div");
     mensajeDiv.textContent = mensaje;
@@ -64,15 +64,18 @@ class Vista {
     mensajeDiv.style.bottom = "20%";
     if (ok) {
       mensajeDiv.style.backgroundColor = "green";
-    } else {
+    } 
+    else {
       mensajeDiv.style.backgroundColor = "red";
     }
     mensajeDiv.style.color = "white";
     mensajeDiv.style.textAlign = "center";
     mensajeDiv.style.padding = "10px";
     mensajeDiv.style.borderRadius = "10px";
+
     // Mostrar el mensaje
     document.getElementById("contenido").appendChild(mensajeDiv);
+
     // Eliminar el mensaje después de 3 segundos
     setTimeout(() => {
       mensajeDiv.remove();

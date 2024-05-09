@@ -54,23 +54,23 @@
 
                 <div class="nombre">
                     <h5>Nombre Completo</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="text" name="name" required>
                 </div>
                 <div class="usuario">
                     <h5>Correo electronico</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="text" name="email" required>
                 </div>
                 <div class="celular">
                     <h5>Celular</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="tel" name="telefono" required>
                 </div>
                 <div class="direccion">
                     <h5>Direccion</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="text" name="direccion" required>
                 </div>
                 <div class="contrasenia">
                     <h5>Contraseña</h5>
-                        <input type="password" required>
+                    <input class="form-control" type="password" name="password" required>
                 </div>
             </form>
 
@@ -97,11 +97,11 @@
     
                 <div class="nombre">
                     <h5>Nombre Mascota</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="text" name="nombre_mascota" required>
                 </div>
                 <div class="usuario">
                     <h5>Tipo Mascota</h5>
-                        <input type="text" required>
+                    <input class="form-control" type="text" name="tipo_mascota" required>
                 </div>
                 
             </form>
@@ -111,7 +111,7 @@
         </div>
     </template>
 
-    <template id="iniciarSesion">
+    <template id="login">
         <div class="contenido">
             <div class="encabezado">
                 <div class="retroceder">
@@ -128,18 +128,18 @@
             </div>
 
 
-            <form id="formlogin">
+            <form class="formulario" id="formLogin">
                 <div class="usuario">
                     <h5>Correo electronico</h5>
-                    <input type="text" required>
+                    <input class="form-control" type="text" name="email" required>
                 </div>
                 <div class="contrasenia">
                     <h5>Contraseña</h5>
-                    <input type="password" required>
+                    <input class="form-control" type="password" name="password" required>
                 </div>
-                <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
-                <button id="btn" onclick=mostrarServicios()>Ingresar</button>
             </form>
+                <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
+                <button id="btn" onclick=ingresar()>Ingresar</button>
 
         </div>
     </template>
@@ -379,8 +379,8 @@
     <!--------------------------------------------------------------------------------------->
 
     <script src="/vista/js/vista.js"></script>
-    <script src="/modelo/connect.js"></script>
-    <script src="/modelo/usuario.js"></script>
+    <script src="/model/connect.js"></script>
+    <script src="/model/usuario.js"></script>
     <script src="/vista/js/controlador.js"></script>
 
 </body>
