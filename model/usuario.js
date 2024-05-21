@@ -10,28 +10,35 @@ class Usuario extends Connect{
     }
 
     setData(data){
-        this.id = data.id;
+        this.id_cliente = data.id_cliente;
         this.nombre_cliente = data.nombre_cliente;
-        this.email = data.email;
+        this.direccion = data.direccion;         
         this.telefono = data.telefono;
-        this.direccion = data.direccion;
+        this.email = data.email;
         this.password = data.password;
     }
 
     getData(){
         return {
-            id: this.id,
+            id_cliente: this.id_cliente,
             nombre_cliente: this.nombre_cliente,
-            email: this.email,
+            direccion: this.direccion,
             telefono: this.telefono,
-            direccion: this.direccion
+            email: this.email,
+            password: this.password
         };
     }
 
     //Metodo para verificar login
     login(dataReq, loginCallback){
-        const endpoint = 'clientes/id';
+        const endpoint = `clientes/login`;
         const method = 'POST';
         this.connect(dataReq, endpoint, method, loginCallback);
+    }
+
+    register(dataReq, registerCallback){
+        const endpoint = `clientes`;
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, registerCallback);
     }
 }

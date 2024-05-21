@@ -50,14 +50,14 @@
                 </div>
 
             </div>
-            <form>
+            <form id="formularioRegistro">
 
                 <div class="nombre">
                     <h5>Nombre Completo</h5>
-                    <input class="form-control" type="text" name="name" required>
+                    <input class="form-control" type="text" name="nombre_cliente" required>
                 </div>
                 <div class="usuario">
-                    <h5>Correo electronico</h5>
+                    <h5>Email</h5>
                     <input class="form-control" type="text" name="email" required>
                 </div>
                 <div class="celular">
@@ -69,12 +69,12 @@
                     <input class="form-control" type="text" name="direccion" required>
                 </div>
                 <div class="contrasenia">
-                    <h5>Contraseña</h5>
+                    <h5>Password</h5>
                     <input class="form-control" type="password" name="password" required>
                 </div>
             </form>
 
-            <button id="btn" onclick=mostrarMascotas()>Siguiente</button>
+            <button id="btn" onclick=registrarUsuario()>Siguiente</button>
 
         </div>
     </template>
@@ -93,7 +93,7 @@
                 </div>
     
             </div>
-            <form>
+            <form id="formIngresar">
     
                 <div class="nombre">
                     <h5>Nombre Mascota</h5>
@@ -128,18 +128,19 @@
             </div>
 
 
-            <form class="formulario" id="formLogin">
+            <form id="formularioIniciarSesion">
                 <div class="usuario">
-                    <h5>Correo electronico</h5>
+                    <h5>Email</h5>
                     <input class="form-control" type="text" name="email" required>
                 </div>
                 <div class="contrasenia">
-                    <h5>Contraseña</h5>
+                    <h5>Password</h5>
                     <input class="form-control" type="password" name="password" required>
                 </div>
             </form>
                 <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
-                <button id="btn" onclick=ingresar()>Ingresar</button>
+                <!---<button id="btn" onclick=ingresar()>Ingresar</button>-->
+                <input type="submit" id="btn" onclick=iniciarSesion() value="Ingresar">
 
         </div>
     </template>
@@ -381,7 +382,8 @@
     <script src="/vista/js/vista.js"></script>
     <script src="/model/connect.js"></script>
     <script src="/model/usuario.js"></script>
-    <script src="/vista/js/controlador.js"></script>
+    <script src="/model/mascota.js"></script>
+    <script src="/controlador.js"></script>
 
 </body>
 

@@ -26,12 +26,14 @@ class Connect {
       }
 
       //Realizar la peticion al servidor
-      fetch(url,config)
-          .then(response => response.json())
-          .then(data => {
-              console.log(data);  //For debugging
-              callback(data);     //Funcion a ejecutar despues de la peticion
-          })
-          .catch(error => console.log("error...", error));
+      fetch(url, config)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                callback(data);
+
+            })
+
+            .catch(error => console.log('error...', error));
   }
 }

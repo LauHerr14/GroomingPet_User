@@ -1,5 +1,5 @@
- vista = new Vista()
- usuario = new Usuario();
+vista = new Vista()
+let usuario = new Usuario();
 
 
 /*---------Inicio----------- */
@@ -9,101 +9,105 @@ window.addEventListener('load', function() {
     })
   
     function crearUsuario(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('registro', 'areaDeTrabajo')
     }
 
-    function mostrarMascotas(){
-      vista.limpiarArea('areaDeTrabajo')
-      vista.mostrarPlantilla('mascota', 'areaDeTrabajo')
-    }
-  
-    function ingresarUsuario(){
-      vista.limpiarArea('areaDeTrabajo')
-      vista.mostrarPlantilla('login', 'areaDeTrabajo')
-    }
-
-    function ingresar() {
-      let data = vista.getForm('formulario');
+    function registrarUsuario(){
+      let data = vista.getForm('formularioRegistro');
       if (data.ok) {
-        usuario.login(data, function(data) {
+        usuario.register(data, function(data) {
+          console.log()
           if (data.success) {
-            if (data.cant == 0) {
-              vista.mostrarMensaje(false, 'Uusario o contrseña incorrectos');
-              return;
-            }
-            if (data.usuario.tipo == 'clientes') {
-              const regUsuario = {
-                id_cliente: data.usuario.id,
-                nombre_cliente: data.usuario.nombre_cliente
-              };
-              
-              usuario.setData(regUsuario);
-              mostrarServicios();
+              vista.mostrarPlantilla('mascota', 'areaDeTrabajo');
+              alert("Registro exitoso")  
+            
             } else {
-              vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
-            }
+              vista.mostrarMensaje(false, 'Error al crrear usuario');
           }
         });
       }
     }
     
-    function ingresar(){
-      vista.limpiarArea('areaDeTrabajo')
-      vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
+    function ingresarUsuario(){
+      vista.mostrarPlantilla('login', 'areaDeTrabajo')
     }
+
+    function iniciarSesion() {
+      let data = vista.getForm('formularioIniciarSesion');
+      if (data.ok) {
+        usuario.login(data, function(data) {
+          if (data.success) {
+            let reg = data.data[0];
+              reg.email = data.email;
+              usuario.setData(reg);
+              vista.mostrarPlantilla('servicio', 'areaDeTrabajo');
+              
+            if (data.data.length == 0) {
+              vista.mostrarMensaje(false, 'Usuario o contrseña incorrectos');
+              return;
+            } 
+            
+          } else {
+            vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
+          }
+        });
+      }
+    }
+    
+    
   
     function mostrarServicios(){
-      vista.limpiarArea('areaDeTrabajo')
-      vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
+      let data = vista.getForm('formIngresar');
+      if (data.ok) {
+        mascota.register(data, function(data) {
+          console.log()
+          if (data.success) {
+            vista.mostrarPlantilla('servicio', 'areaDeTrabajo');
+            alert('Mascota registrada')
+
+          } else {
+            vosta.mostrarMensaje(false, 'Error al registrar la mascota');
+          }
+        });
+      }
     }
   
     function mostrarDescripcion1(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('banioYPeluqueria', 'areaDeTrabajo')
     }
   
     function mostrarDescripcion2(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('corteDeUnias', 'areaDeTrabajo')
     }
   
     function mostrarDescripcion3(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('limpiezaGeneral', 'areaDeTrabajo')
     }
 
     function mostrarDescripcion4(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('banioMedicado', 'areaDeTrabajo')
     }
   
     function mostrarAngendarCita(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('agendarCita', 'areaDeTrabajo')
     }
   
     function retrocederPantalla2(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('registro', 'areaDeTrabajo')
     }
 
     function retrocederPantalla(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('inicio', 'areaDeTrabajo')
     }
 
     function retrocederPantalla1(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
     }
 
     function mostrarFinal(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('final', 'areaDeTrabajo')
     }
 
     function salirAplicacion(){
-      vista.limpiarArea('areaDeTrabajo')
       vista.mostrarPlantilla('inicio', 'areaDeTrabajo')
     }

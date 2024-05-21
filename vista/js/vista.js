@@ -40,11 +40,13 @@ class Vista {
       data[key] = value;
       if (value == "" || (form[key].tagName === "SELECT" && value == "0")) {
         data.ok = false;
-        data.msj = "No hay datos en " + key;
+        data.msj = "Ingrese datos en " + key;
         this.mostrarMensaje(false, data.msj);
       }
     });
+
     return data;
+    
   }
 
   /**
@@ -74,11 +76,18 @@ class Vista {
     mensajeDiv.style.borderRadius = "10px";
 
     // Mostrar el mensaje
-    document.getElementById("contenido").appendChild(mensajeDiv);
+    document.getElementById("areaDeTrabajo").appendChild(mensajeDiv);
 
     // Eliminar el mensaje después de 3 segundos
     setTimeout(() => {
       mensajeDiv.remove();
     }, 3000);
+  }
+
+  setForm(formulario, data) {
+    let form = document.getElementById(formulario);
+    for (let key in data) {
+      form[key].value = data[key];
+    }
   }
 }
