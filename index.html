@@ -37,6 +37,7 @@
     </template>
 
     <template id="registro">
+
         <div class="contenido">
             <div class="encabezado">
                 <div class="retroceder">
@@ -58,7 +59,7 @@
                 </div>
                 <div class="usuario">
                     <h5>Email</h5>
-                    <input class="form-control" type="text" name="email" required>
+                    <input class="form-control" type="email" name="email" required>
                 </div>
                 <div class="celular">
                     <h5>Celular</h5>
@@ -106,7 +107,7 @@
                 
             </form>
     
-            <button id="mascota" onclick=mostrarServicios()>Ingresar</button>
+            <button id="mascota" onclick=registrarMascota()>Ingresar</button>
     
         </div>
     </template>
@@ -131,7 +132,7 @@
             <form id="formularioIniciarSesion">
                 <div class="usuario">
                     <h5>Email</h5>
-                    <input class="form-control" type="text" name="email" required>
+                    <input class="form-control" type="email" name="email" required>
                 </div>
                 <div class="contrasenia">
                     <h5>Password</h5>

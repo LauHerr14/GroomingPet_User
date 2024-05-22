@@ -1,6 +1,6 @@
 vista = new Vista()
 let usuario = new Usuario();
-
+let mascota = new Mascota();
 
 /*---------Inicio----------- */
 
@@ -14,12 +14,22 @@ window.addEventListener('load', function() {
 
     function registrarUsuario(){
       let data = vista.getForm('formularioRegistro');
+      let usr1 = {
+        id_cliente : 0,
+        nombre_cliente : data.nombre_cliente,
+        direccion : data.direccion, 
+        telefono : data.telefono, 
+        email : data.email
+      }
+
       if (data.ok) {
         usuario.register(data, function(data) {
           console.log()
           if (data.success) {
               vista.mostrarPlantilla('mascota', 'areaDeTrabajo');
-              alert("Registro exitoso")  
+              vista.mostrarMensaje(true, "Registro exitoso") 
+              usr1.id_cliente = data.data
+              usuario.setData(usr1);
             
             } else {
               vista.mostrarMensaje(false, 'Error al crrear usuario');
@@ -37,15 +47,17 @@ window.addEventListener('load', function() {
       if (data.ok) {
         usuario.login(data, function(data) {
           if (data.success) {
+
+            if (data.data == 0) {
+              vista.mostrarMensaje(false, 'Usuario o contrseña incorrectos');
+              return;
+            } 
+
             let reg = data.data[0];
               reg.email = data.email;
               usuario.setData(reg);
               vista.mostrarPlantilla('servicio', 'areaDeTrabajo');
               
-            if (data.data.length == 0) {
-              vista.mostrarMensaje(false, 'Usuario o contrseña incorrectos');
-              return;
-            } 
             
           } else {
             vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
@@ -56,17 +68,18 @@ window.addEventListener('load', function() {
     
     
   
-    function mostrarServicios(){
+    function registrarMascota(){
       let data = vista.getForm('formIngresar');
       if (data.ok) {
+        data.id_cliente = usuario.id_cliente;
         mascota.register(data, function(data) {
           console.log()
           if (data.success) {
             vista.mostrarPlantilla('servicio', 'areaDeTrabajo');
-            alert('Mascota registrada')
+            vista.mostrarMensaje(true, "Mascota registrada")
 
           } else {
-            vosta.mostrarMensaje(false, 'Error al registrar la mascota');
+            vista.mostrarMensaje(false, 'Error al registrar la mascota');
           }
         });
       }

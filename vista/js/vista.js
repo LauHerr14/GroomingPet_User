@@ -75,6 +75,7 @@ class Vista {
     mensajeDiv.style.padding = "10px";
     mensajeDiv.style.borderRadius = "10px";
 
+
     // Mostrar el mensaje
     document.getElementById("areaDeTrabajo").appendChild(mensajeDiv);
 
