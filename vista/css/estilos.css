@@ -356,18 +356,7 @@ body {
   display: flex;
 }
 
-.fecha1 input {
-  background: #7fc7d9;
-  padding: 10px 0 0 10px;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-}
 
-.fecha1 {
-  padding: 20px;
-  letter-spacing: 5px;
-}
 
 .descripcion {
   display: flex;

@@ -11,7 +11,24 @@
 
 <body>
 
-    
+    <div class="contenido">
+        <div class="agendarCita">
+            <div class="retroceder">
+                <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                        alt=""></button>
+
+            </div>
+            <div class="row">
+                <h1>Agenda tu Cita</h1>
+
+            </div>
+        </div>
+
+        <div class="fecha1">
+            
+
+            <button id="btn" onclick=mostrarFinal()>Agendar cita</button>
+        </div>
 
     <!------------------Area De Trabajo------------------------>
 
@@ -107,7 +124,7 @@
                 
             </form>
     
-            <button id="mascota" onclick=registrarMascota()>Ingresar</button>
+            <button id="mascota" onclick=registrarMascota()>Registrar Mascota</button>
     
         </div>
     </template>
@@ -177,71 +194,7 @@
     </template>
 
     <template id="agendarCita">
-        <div class="contenido">
-            <div class="agendarCita">
-                <div class="retroceder">
-                    <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
-                            alt=""></button>
-
-                </div>
-                <div class="row">
-                    <h1>Agenda tu Cita</h1>
-
-                </div>
-            </div>
-
-            <div class="fecha1">
-                <h4>Citas Disponibles</h4>
-                <table>
-                    <tr>
-                        <th>24 de feb</th>
-                        <th>26 de feb</th>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>8:00 am</a></td>
-                        <td><input type="checkbox"> <a>8:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>9:00 am</a></td>
-                        <td><input type="checkbox"> <a>9:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>10:00 am</a></td>
-                        <td><input type="checkbox"> <a>10:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>11:00 am</a></td>
-                        <td><input type="checkbox"> <a>11:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>12:00 am</a></td>
-                        <td><input type="checkbox"> <a>12:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>1:00 am</a></td>
-                        <td><input type="checkbox"> <a>1:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>3:00 am</a></td>
-                        <td><input type="checkbox"> <a>3:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>4:00 am</a></td>
-                        <td><input type="checkbox"> <a>4:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>5:00 am</a></td>
-                        <td><input type="checkbox"> <a>5:00 am</a></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"> <a>6:00 am</a></td>
-                        <td><input type="checkbox"> <a>6:00 am</a></td>
-                    </tr>
-
-                </table>
-
-                <button id="btn" onclick=mostrarFinal()>Agendar cita</button>
-            </div>
+        
 
     </template>
 
