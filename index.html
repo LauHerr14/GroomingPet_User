@@ -11,24 +11,7 @@
 
 <body>
 
-    <div class="contenido">
-        <div class="agendarCita">
-            <div class="retroceder">
-                <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
-                        alt=""></button>
-
-            </div>
-            <div class="row">
-                <h1>Agenda tu Cita</h1>
-
-            </div>
-        </div>
-
-        <div class="fecha1">
-            
-
-            <button id="btn" onclick=mostrarFinal()>Agendar cita</button>
-        </div>
+    
 
     <!------------------Area De Trabajo------------------------>
 
@@ -194,7 +177,27 @@
     </template>
 
     <template id="agendarCita">
-        
+        <div class="contenido">
+            <div class="agendarCita">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+    
+                </div>
+                <div class="row">
+                    <h1>Agenda tu Cita</h1>
+                    
+    
+                </div>
+            </div>
+    
+            <div class="fecha1">
+                <input type="datetime-local" name="fecha" >
+                
+    
+                <button id="btn" onclick=mostrarFinal()>Agendar cita</button>
+            </div>
+        </div>
 
     </template>
 

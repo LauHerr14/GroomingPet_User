@@ -268,8 +268,22 @@ body {
 }
 
 .row {
-  margin: 10px 0 0 50px;
+  margin: 20px 0 0 50px;
   font-size: 1rem;
+    margin-top: 20px;
+    background: #365486;
+    color: white;
+    width: 270%;
+    height: 30%;
+    border-radius: 50px;
+  
+}
+
+.row h1{
+  font-size: 1.5rem;
+  margin: 5% 0 5% 15%;
+  justify-content: center;
+  
 }
 
 
@@ -356,7 +370,22 @@ body {
   display: flex;
 }
 
+.fecha1 input {
+  margin-top: 50px;
+  margin-left: 20PX;
+  margin-bottom: 250px;
+  background: #7fc7d9;
+  padding: 10px 0 0 10px;
+  width: 350px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 20px
+}
 
+.fecha1 {
+  padding: 20px;
+  letter-spacing: 5px;
+}
 
 .descripcion {
   display: flex;
