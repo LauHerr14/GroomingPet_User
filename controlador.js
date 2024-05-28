@@ -117,8 +117,19 @@ window.addEventListener('load', function() {
       vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
     }
 
-    function mostrarFinal(){
-      vista.mostrarPlantilla('final', 'areaDeTrabajo')
+    function agendarCita(){
+      let data = vista.getForm('hora_disponible');
+      if (data.ok) {
+        agenda_citas.getAll(data, function(data) {
+          if (data.success) {
+            let reg = data.data[0];
+            agenda_citas.setData(reg);
+            vista.mostrarPlantilla('final', 'areaDeTrabajo')
+          } else {
+            vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
+          }
+        });
+      }
     }
 
     function salirAplicacion(){

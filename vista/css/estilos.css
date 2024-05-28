@@ -371,20 +371,43 @@ body {
 }
 
 .fecha1 input {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 20PX;
+  background: #7fc7d9;
+  padding: 10px 0 0 10px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 20px
+
+}
+
+#hora{
+  display: flex;
   margin-top: 50px;
   margin-left: 20PX;
   margin-bottom: 250px;
   background: #7fc7d9;
   padding: 10px 0 0 10px;
-  width: 350px;
+  width: 150px;
   height: 50px;
   cursor: pointer;
   border-radius: 20px
 }
 
+#hora1{
+  background-color: white;
+}
+
 .fecha1 {
+  display: flex;
   padding: 20px;
   letter-spacing: 5px;
+}
+
+#hora_disponible {
+  display: flex;
 }
 
 .descripcion {

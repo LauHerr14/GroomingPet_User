@@ -192,11 +192,32 @@
             </div>
     
             <div class="fecha1">
-                <input type="datetime-local" name="fecha" >
+
+                <form id="hora_disponible">
+                    <input type="date" name="hora_agendada" id="hora_agendada" >
+        
+                    <label for="hora"></label>
+                    <select name="hora_disponible" id="hora">
+                        <option value="seleccionar hora">__:__</option>
+                        <option value="9:00">9:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    
+                    </select>
+
+                </form>
+                
                 
     
-                <button id="btn" onclick=mostrarFinal()>Agendar cita</button>
             </div>
+            <button id="btn" onclick=agendarCita()>Agendar cita</button>
         </div>
 
     </template>
@@ -217,7 +238,9 @@
                     Consta de baño con agua tibia y shampoo especial antipulgas, masaje de relajacion para tu peludito,
                 </p>
                 <con ello un corte (al estilo que desees), se le aplica locion y pañoleta de obsequio></con><br>
-                Tiene un costo de $ XXXX
+                
+                Precio: $0
+
             </div>
             <button id="btn" onclick=mostrarAngendarCita()>Agendar cita</button>
 
@@ -257,7 +280,7 @@
                 🧮También se realiza para prevenir el desarrollo de las pulgas y garrapatas o tratarlas.<br>
 
                 </p>
-                <p>Tiene un costo de $XXXX</p>
+                <p>Precio: $0</p>
             </div>
             <button id="btn" onclick=mostrarAngendarCita()>Agendar cita</button>
 
@@ -282,7 +305,8 @@
                 </p>
                 <p>Se utilizara un cortauñas especial para tu peludito.</p>
 
-                Tiene un costo de $ XXXX
+                Precio: $0
+
             </div>
             <button id="btn" onclick=mostrarAngendarCita()>Agendar cita</button>
 
@@ -312,7 +336,7 @@
                     ▪️Entre otros...
                     <br>
                 </p>
-                <p>Tiene un costo de $XXXX</p>
+                <p>Precio: $0</p>
             </div>
             <button id="btn" onclick=mostrarAngendarCita()>Agendar cita</button>
 
