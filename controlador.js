@@ -1,6 +1,7 @@
 vista = new Vista()
 let usuario = new Usuario();
 let mascota = new Mascota();
+let agenda_citas = new Agenda_citas();
 
 /*---------Inicio----------- */
 
@@ -117,28 +118,20 @@ function retrocederPantalla1() {
 
 function agendarCita() {
   let data = vista.getForm('hora_disponible');
-  let disp = {
-    id_cliente: data.id_cliente,
-    id_mascota: data.id_mascota,
-    hora_seleccionada: data.hora_seleccionada
-  }
-
+  
   if (data.ok) {
+    data.id_cliente = usuario.id_cliente;
+    data.id_mascota = mascota.id_mascota;
     agenda_citas.getAll(data, function (data) {
+      console.log()
       if (data.success) {
         if (data.data == 0) {
+          vista.mostrarPlantilla('final', 'areaDeTrabajo');
           vista.mostrarMensaje(true, 'su cita fue agendada con exito');
-          disp.hora_seleccionada = data.data
-          agendarCitas.setData(disp);
-          return;
-        }
+        } 
 
-        let reg = data.data[0];
-        reg.agenda_citas = data.agenda_citas
-        agenda_citas.setData(reg);
-        vista.mostrarMensaje(false, "La hora seleccionada no esta disponible")
       } else {
-        vista.mostrarMensaje(false, 'Error al realizar la consulta en la base de datos');
+        vista.mostrarMensaje(false, "La hora seleccionada no esta disponible");
       }
     });
   }
