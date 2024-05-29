@@ -11,16 +11,10 @@
 
 <body>
 
-    
-
     <!------------------Area De Trabajo------------------------>
 
-
     <div class="contenido" id="areaDeTrabajo">
-
-
     </div>
-
 
     <!---------------------------PANTALLAS------------------------------->
     <template id="inicio">
@@ -86,16 +80,16 @@
                 <div class="retroceder">
                     <button id="retroceso" onclick=retrocederPantalla2()><img src="/imagenes/caret-left-fill (1).svg"
                             alt=""></button>
-    
+
                 </div>
                 <div class="registro">
                     <h1>Mascota</h1>
-    
+
                 </div>
-    
+
             </div>
             <form id="formIngresar">
-    
+
                 <div class="nombre">
                     <h5>Nombre Mascota</h5>
                     <input class="form-control" type="text" name="nombre_mascota" required>
@@ -104,11 +98,11 @@
                     <h5>Tipo Mascota</h5>
                     <input class="form-control" type="text" name="tipo_mascota" required>
                 </div>
-                
+
             </form>
-    
+
             <button id="mascota" onclick=registrarMascota()>Registrar Mascota</button>
-    
+
         </div>
     </template>
 
@@ -139,9 +133,9 @@
                     <input class="form-control" type="password" name="password" required>
                 </div>
             </form>
-                <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
-                <!---<button id="btn" onclick=ingresar()>Ingresar</button>-->
-                <input type="submit" id="btn" onclick=iniciarSesion() value="Ingresar">
+            <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
+            <!---<button id="btn" onclick=ingresar()>Ingresar</button>-->
+            <input type="submit" id="btn" onclick=iniciarSesion() value="Ingresar">
 
         </div>
     </template>
@@ -179,23 +173,17 @@
     <template id="agendarCita">
         <div class="contenido">
             <div class="agendarCita">
-                <div class="retroceder">    
+                <div class="retroceder">
                     <button id="retroceso" onclick=retrocederPantalla1()><img src="/imagenes/caret-left-fill (1).svg"
                             alt=""></button>
-    
                 </div>
                 <div class="row">
                     <h1>Agenda tu Cita</h1>
-                    
-    
                 </div>
             </div>
-    
             <div class="fecha1">
-
                 <form id="hora_disponible">
-                    <input type="date" name="hora_agendada" id="hora_agendada" >
-        
+                    <input type="date" name="hora_agendada" id="hora_agendada">
                     <label for="hora"></label>
                     <select name="hora_disponible" id="hora">
                         <option value="seleccionar hora">__:__</option>
@@ -209,17 +197,11 @@
                         <option value="16:00">16:00</option>
                         <option value="17:00">17:00</option>
                         <option value="18:00">18:00</option>
-                    
                     </select>
-
                 </form>
-                
-                
-    
             </div>
-            <button id="btn" onclick=agendarCita()>Agendar cita</button>
+            <button id="btn" onclick=agendarCita()>Agendar</button>
         </div>
-
     </template>
 
     <template id="banioYPeluqueria">
@@ -236,8 +218,8 @@
             <div class="texto">
                 <p>
                     Consta de baño con agua tibia y shampoo especial antipulgas, masaje de relajacion para tu peludito,
+                    con ello un corte (al estilo que desees), se le aplica locion y pañoleta de obsequio
                 </p>
-                <con ello un corte (al estilo que desees), se le aplica locion y pañoleta de obsequio></con><br>
                 
                 Precio: $0
 
@@ -352,7 +334,6 @@
 
                 </div>
             </div>
-
             <button type="button" id="salirApp" onclick=salirAplicacion()>Salir</button>
         </div>
     </template>
@@ -364,12 +345,11 @@
     <script src="/model/connect.js"></script>
     <script src="/model/usuario.js"></script>
     <script src="/model/mascota.js"></script>
+    <script src="/model/agenda_citas.js"></script>
     <script src="/controlador.js"></script>
 
 </body>
 
 <!--Pantallas-->
-
-
 
 </html>
