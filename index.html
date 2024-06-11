@@ -11,6 +11,8 @@
 
 <body>
 
+    
+
     <!------------------Area De Trabajo------------------------>
 
     <div class="contenido" id="areaDeTrabajo">
@@ -78,12 +80,12 @@
         <div class="contenido">
             <div class="encabezado">
                 <div class="retroceder">
-                    <button id="retroceso" onclick=retrocederPantalla2()><img src="/imagenes/caret-left-fill (1).svg"
+                    <button id="retroceso" onclick=retrocederPantallaInicio()><img src="/imagenes/caret-left-fill (1).svg"
                             alt=""></button>
 
                 </div>
                 <div class="registro">
-                    <h1>Mascota</h1>
+                    <h1 id="tittuloMascota">Registrar Mascota</h1>
 
                 </div>
 
@@ -136,6 +138,9 @@
             <div class="recordar"><A href="">¿Olvido su contraseña?</A></div>
             <!---<button id="btn" onclick=ingresar()>Ingresar</button>-->
             <input type="submit" id="btn" onclick=iniciarSesion() value="Ingresar">
+            <h8 id="o">O</h8>
+            <input type="submit" id="btn5" onclick=nuevaMascota() value="Registar Mascota">
+
 
         </div>
     </template>
@@ -181,25 +186,26 @@
                     <h1>Agenda tu Cita</h1>
                 </div>
             </div>
+            <select name="mascota" id="seleccionarMascota">
+                <option value="Seleccionar mascota">Seleccionar mascota</option>
+                
+            </select>
             <div class="fecha1">
                 <form id="hora_disponible">
-                    <input type="date" name="fecha" id="fecha">
-                    <label for="hora" name = "hora">
-                        <select name="hora_disponible" id="hora">
-                            <option value="seleccionar hora">__:__</option>
-                            <option value="9:00:00">9:00:00</option>
-                            <option value="10:00:00">10:00:00</option>
-                            <option value="11:00:00">11:00:00</option>
-                            <option value="12:00:00">12:00:00</option>
-                            <option value="13:00:00">13:00:00</option>
-                            <option value="14:00:00">14:00:00</option>
-                            <option value="15:00:00">15:00:00</option>
-                            <option value="16:00:00">16:00:00</option>
-                            <option value="17:00:00">17:00:00</option>
-                            <option value="18:00:00">18:00:00</option>
-                        </select>
-
-                    </label>
+                    <input type="date" name="fecha">
+                    <select name="hora" id="hora" required>
+                        <option value="seleccionar hora">Selecciona la hora</option>
+                        <option value="9:00:00">9:00:00</option>
+                        <option value="10:00:00">10:00:00</option>
+                        <option value="11:00:00">11:00:00</option>
+                        <option value="12:00:00">12:00:00</option>
+                        <option value="13:00:00">13:00:00</option>
+                        <option value="14:00:00">14:00:00</option>
+                        <option value="15:00:00">15:00:00</option>
+                        <option value="16:00:00">16:00:00</option>
+                        <option value="17:00:00">17:00:00</option>
+                        <option value="18:00:00">18:00:00</option>
+                    </select>
                 </form>
             </div>
             <button id="btn" onclick=agendarCita()>Agendar</button>
@@ -222,7 +228,7 @@
                     Consta de baño con agua tibia y shampoo especial antipulgas, masaje de relajacion para tu peludito,
                     con ello un corte (al estilo que desees), se le aplica locion y pañoleta de obsequio
                 </p>
-                
+
                 Precio: $0
 
             </div>
@@ -340,6 +346,37 @@
         </div>
     </template>
 
+    <template id="nuevaMascota">
+        <div class="contenido">
+            <div class="encabezado">
+                <div class="retroceder">
+                    <button id="retroceso" onclick=retrocederPantallaInicio()><img src="/imagenes/caret-left-fill (1).svg"
+                            alt=""></button>
+    
+                </div>
+                <div class="titulo">
+                    <h1 id="tittuloMascota">Registra tu mascota</h1>
+    
+                </div>
+    
+    
+            </div>
+    
+    
+            <form id="formularioNuevaMascota">
+                <div class="usuario">
+                    <h5>Ingrese su Email</h5>
+                    <input class="form-control" type="email" name="email" required>
+                </div>
+    
+            <input type="submit" id="btn" onclick=siguienteMascota() value="Ingresar">
+        
+    
+    
+        </div>
+
+    </template>
+
 
     <!--------------------------------------------------------------------------------------->
 
@@ -347,7 +384,7 @@
     <script src="/model/connect.js"></script>
     <script src="/model/usuario.js"></script>
     <script src="/model/mascota.js"></script>
-    <script src="/model/agenda_citas.js"></script>
+    <script src="/model/agendaCitas.js"></script>
     <script src="/controlador.js"></script>
 
 </body>

@@ -1,7 +1,7 @@
 vista = new Vista()
 let usuario = new Usuario();
 let mascota = new Mascota();
-let agenda_citas = new Agenda_citas();
+let agendaCitas = new AgendaCitas();
 
 /*---------Inicio----------- */
 
@@ -46,6 +46,7 @@ function ingresarUsuario() {
 function iniciarSesion() {
   let data = vista.getForm('formularioIniciarSesion');
   if (data.ok) {
+    data.id_mascota = mascota.id_mascota;
     usuario.login(data, function (data) {
       if (data.success) {
 
@@ -116,18 +117,23 @@ function retrocederPantalla1() {
   vista.mostrarPlantilla('servicio', 'areaDeTrabajo')
 }
 
+function retrocederPantallaInicio() {
+  vista.mostrarPlantilla('login', 'areaDeTrabajo')
+}
+
 function agendarCita() {
   let data = vista.getForm('hora_disponible');
+  data.id_cliente = usuario.id_cliente,
+  data.id_mascota = mascota.id_mascota;
   
   if (data.ok) {
-    data.id_cliente = usuario.id_cliente;
-    data.id_mascota = mascota.id_mascota;
-    agenda_citas.getAll(data, function (data) {
-      console.log()
+    console.log("informacion: ", data);
+    agendaCitas.horaAgendada(data, function (data) {
       if (data.success) {
         if (data.data == 0) {
           vista.mostrarPlantilla('final', 'areaDeTrabajo');
-          vista.mostrarMensaje(true, 'su cita fue agendada con exito');
+          vista.mostrarMensaje(true, 'Su cita fue agendada con exito');
+          agendaCitas.setData(data);
         } 
 
       } else {
@@ -139,4 +145,12 @@ function agendarCita() {
 
 function salirAplicacion() {
   vista.mostrarPlantilla('inicio', 'areaDeTrabajo')
+}
+
+function nuevaMascota() {
+  vista.mostrarPlantilla('nuevaMascota', 'areaDeTrabajo')
+}
+
+function siguienteMascota() {
+        vista.mostrarPlantilla('mascota', 'areaDeTrabajo');
 }
