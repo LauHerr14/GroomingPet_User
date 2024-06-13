@@ -91,4 +91,30 @@ class Vista {
       form[key].value = data[key];
     }
   }
+
+  /**
+   * Metodo para añadir opciones en un select
+   * 
+   * @param {*} opciones: opciones para añadir al select que devuelve select como listo
+   * @param {*} selectName: nombre del select al que se le añadiran las opciones
+   * @param {*} nombre_llave: nombre de las llaves de las opciones
+   * @param {*} nombre_valor: nombre del valor de las opciones
+   * @memberof Vista
+   */
+
+  insertar_opciones_select(opciones, select_name, nombre_llave, nombre_valor){
+    const select = document.getElementById(select_name);
+
+    if (select) { //array1.forEach((element) =>
+      opciones.forEach((elemento) => {   
+        const option = document.createElement('option');
+        option.value = elemento[nombre_llave];
+        option.textContent = elemento[nombre_valor];
+        select.appendChild(option);
+      });
+    } else {
+      console.error('El contenedor especificado no existe')
+    }
+  }
+
 }

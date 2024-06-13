@@ -2,7 +2,7 @@ class AgendaCitas extends Connect{
     constructor(){
         super()
         this.id_cliente = 0;
-        this.id_mascota = 0;
+        this.id_mascota = '';
         this.fecha = '';
         this.hora = '';
     }
@@ -27,5 +27,11 @@ class AgendaCitas extends Connect{
         const endpoint = `agenda_citas`;
         const method = 'POST';
         this.connect(dataReq, endpoint, method, horaAgendadaCallback);
+    }
+
+    getByDate(fecha, horaAgendadaCallback){
+        const endpoint = `agenda_citas/dia/${fecha}`;
+        const method = 'GET';
+        this.connect({}, endpoint, method, horaAgendadaCallback);
     }
 }

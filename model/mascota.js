@@ -28,4 +28,10 @@ class Mascota extends Connect{
         const method = 'POST';
         this.connect(dataReq, endpoint, method, registerCallback)
     }
+
+    listar(id, listaCallBack) {
+        const endpoint = `lista/${id}`;
+        const method = `GET`;
+        this.connect({}, endpoint, method, listaCallBack)
+    }
 }   

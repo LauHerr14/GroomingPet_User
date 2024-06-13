@@ -2,6 +2,7 @@ vista = new Vista()
 let usuario = new Usuario();
 let mascota = new Mascota();
 let agendaCitas = new AgendaCitas();
+let listaMascotas = [];
 
 /*---------Inicio----------- */
 
@@ -59,6 +60,12 @@ function iniciarSesion() {
         reg.email = data.email;
         usuario.setData(reg);
         vista.mostrarPlantilla('servicio', 'areaDeTrabajo');
+        //Consultar mascotas
+        mascota.listar(usuario.id_cliente, function(data){
+          listaMascotas = data.data;
+        })
+
+
 
 
       } else {
@@ -103,6 +110,8 @@ function mostrarDescripcion4() {
 
 function mostrarAngendarCita() {
   vista.mostrarPlantilla('agendarCita', 'areaDeTrabajo')
+  //Cargar select de mascotas
+  vista.insertar_opciones_select(listaMascotas, "seleccionarMascota", "id_mascota", "nombre_mascota")
 }
 
 function retrocederPantalla2() {
@@ -143,6 +152,8 @@ function agendarCita() {
   }
 }
 
+
+
 function salirAplicacion() {
   vista.mostrarPlantilla('inicio', 'areaDeTrabajo')
 }
@@ -153,4 +164,29 @@ function nuevaMascota() {
 
 function siguienteMascota() {
         vista.mostrarPlantilla('mascota', 'areaDeTrabajo');
+}
+
+
+//Consulta citas disponibles para la fecha seleccionada
+function consultarCitas() {
+  //Leer fecha del input fechaCita
+  let fecha = document.getElementById('fechaCita').value
+  //consultar en la BD las citas para esa fecha
+  agendaCitas.getByDate(fecha, function(data){
+    let listaHoras = data.data;
+    //generar lista de horas que NO ESTEN en la consulta anterior
+    let disponibles = []
+    for (let h = 9; h < 20; h++) {
+      //Buscar h en listaHoras
+      let horaOcupada = listaHoras.find(o => o.hora == h+':00:00');
+      //Si no esta, agregar a disponibles
+      if (!horaOcupada) {
+        disponibles.push(':00:00');
+        
+      }
+      
+    }
+  //Llenar el select de horas disponibles con la lista anterior
+  });
+
 }
