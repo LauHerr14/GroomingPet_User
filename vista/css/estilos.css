@@ -39,7 +39,7 @@ body {
 
 .contenido h2 {
   padding: 200px 100px 65px 108px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .inicio {
@@ -407,7 +407,9 @@ body {
   letter-spacing: 5px;
 }
 
-#hora_disponible {
+
+
+.acomodar{
   display: flex;
 }
 
@@ -538,7 +540,7 @@ body {
 #seleccionarMascota {
     display: flex;
     margin-top: 80px;
-    margin-left: 40PX;
+    margin-left: 20PX;
     background: #7fc7d9;
     padding: 10px 0 0 10px;
     width: 370px;

@@ -43,10 +43,23 @@ class Vista {
         data.msj = "Ingrese datos en " + key;
         this.mostrarMensaje(false, data.msj);
       }
+
+      if (form[key].type == "email") {
+        if (!this.validateEmail(value)) {
+          data.ok = false;
+          data.msj = "No es un correo válido: " + value;
+          this.mostrarMensaje(false, data.msj);
+        }
+      }
     });
 
     return data;
-    
+  }
+
+  validateEmail(email) {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
   }
 
   /**
@@ -55,7 +68,6 @@ class Vista {
    * @param {str} mensaje: texto del mensaje a desplegar
    */
   mostrarMensaje(ok, mensaje) {
-   
     // Crear el elemento del mensaje
     let mensajeDiv = document.createElement("div");
     mensajeDiv.textContent = mensaje;
@@ -66,15 +78,13 @@ class Vista {
     mensajeDiv.style.bottom = "20%";
     if (ok) {
       mensajeDiv.style.backgroundColor = "green";
-    } 
-    else {
+    } else {
       mensajeDiv.style.backgroundColor = "red";
     }
     mensajeDiv.style.color = "white";
     mensajeDiv.style.textAlign = "center";
     mensajeDiv.style.padding = "10px";
     mensajeDiv.style.borderRadius = "10px";
-
 
     // Mostrar el mensaje
     document.getElementById("areaDeTrabajo").appendChild(mensajeDiv);
@@ -94,7 +104,7 @@ class Vista {
 
   /**
    * Metodo para añadir opciones en un select
-   * 
+   *
    * @param {*} opciones: opciones para añadir al select que devuelve select como listo
    * @param {*} selectName: nombre del select al que se le añadiran las opciones
    * @param {*} nombre_llave: nombre de las llaves de las opciones
@@ -102,19 +112,19 @@ class Vista {
    * @memberof Vista
    */
 
-  insertar_opciones_select(opciones, select_name, nombre_llave, nombre_valor){
+  insertar_opciones_select(opciones, select_name, nombre_llave, nombre_valor) {
     const select = document.getElementById(select_name);
 
-    if (select) { //array1.forEach((element) =>
-      opciones.forEach((elemento) => {   
-        const option = document.createElement('option');
+    if (select) {
+      //array1.forEach((element) =>
+      opciones.forEach((elemento) => {
+        const option = document.createElement("option");
         option.value = elemento[nombre_llave];
         option.textContent = elemento[nombre_valor];
         select.appendChild(option);
       });
     } else {
-      console.error('El contenedor especificado no existe')
+      console.error("El contenedor especificado no existe");
     }
   }
-
 }

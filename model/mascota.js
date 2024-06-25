@@ -1,6 +1,6 @@
 class Mascota extends Connect{
     constructor(){
-        super()
+        super();
         this.id_mascota = 0;
         this.id_cliente = '';
         this.nombre_mascota = '';

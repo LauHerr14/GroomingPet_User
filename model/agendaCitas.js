@@ -23,10 +23,10 @@ class AgendaCitas extends Connect{
         }
     }
 
-    horaAgendada(dataReq, horaAgendadaCallback){
+    horaAgendada(agendaCitas1, horaAgendadaCallback){
         const endpoint = `agenda_citas`;
         const method = 'POST';
-        this.connect(dataReq, endpoint, method, horaAgendadaCallback);
+        this.connect(agendaCitas1, endpoint, method, horaAgendadaCallback);
     }
 
     getByDate(fecha, horaAgendadaCallback){

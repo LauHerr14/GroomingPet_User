@@ -41,4 +41,10 @@ class Usuario extends Connect{
         const method = 'POST';
         this.connect(dataReq, endpoint, method, registerCallback);
     }
+
+    validar(dataReq, validarCallback){
+        const endpoint = `clientes/validar`;
+        const method = 'POST';
+        this.connect(dataReq, endpoint, method, validarCallback);
+    }
 }
