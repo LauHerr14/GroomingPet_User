@@ -161,11 +161,13 @@ function nuevaMascota() {
 
 function siguienteMascota() {
   let data = vista.getForm("formularioNuevaMascota");
+
   if (data.ok) {
+    console.log(data);
     usuario.validar(data, function (data) {
       if (data.success) {
         if (data.data == 0) {
-          vista.mostrarMensaje(false, "El correo es incorrecto");
+          vista.mostrarMensaje(false, 'Email incorrecto')
           return;
         }
 
@@ -176,7 +178,7 @@ function siguienteMascota() {
       } else {
         vista.mostrarMensaje(
           false,
-          "Error al realizar la consulta en la base de datos"
+          "Correo incorrecto"
         );
       }
     });
